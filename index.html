@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Meta Mob - Crypto Collective</title>
-    <link rel="icon" href="https://scontent-ber1-1.cdninstagram.com/v/t51.2885-19/573335024_17859460635537917_3611770307975054618_n.jpg" type="image/x-icon" />
+    <title>METAMOB - Cyberpunk dApp</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/gridjs@latest/dist/gridjs.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/gridjs@latest/dist/gridjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -1037,6 +1034,29 @@
         gap: 16px;
       }
 
+      .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .icon {
+        display: inline-block;
+        height: 24px;
+        width: 24px;
+        object-fit: contain;
+        filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.18));
+        transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+        opacity: 0.92;
+      }
+
+      #socials a:hover .icon {
+        transform: translateY(-1px) scale(1.08);
+        filter: drop-shadow(0 0 18px rgba(0, 255, 255, 0.35));
+        opacity: 1;
+      }
+
       .footer-link {
         font-size: 0.6rem;
         letter-spacing: 0.15em;
@@ -1053,16 +1073,6 @@
         opacity: 1;
         transform: translateY(-1px);
         text-shadow: 0 0 24px currentColor;
-      }
-
-      .social {
-        display: flex;
-        justify-content: center;
-      }
-      .icon {
-        display: inline-block;
-        height: 24px;
-        width: 24px;
       }
 
       @media (max-width: 768px) {
@@ -2254,11 +2264,11 @@
     <footer class="site-footer" id="siteFooter" role="contentinfo">
       <div class="site-footer-inner">
         <div class="footer-copy" id="footerCopy">© <span id="footerYear"></span> METAMOB. ALL RIGHTS RESERVED.</div>
-        <div id="socials">
-          <a href="https://t.me/metamob3" id="tme" target="_blank"><img src="https://ipfs.io/ipfs/bafybeicks42jnz3dctcijwg7aan2dlgmm7pije6j2daywn5ze37pnp6ini/tme.webp" class="icon" /></a>
-          <a href="https://x.com/tokens617" id="xcom" target="_blank"><img src="https://ipfs.io/ipfs/bafybeicks42jnz3dctcijwg7aan2dlgmm7pije6j2daywn5ze37pnp6ini/xcom.webp" class="icon" /></a>
-          <a href="https://www.instagram.com/meta_mob_" id="insta" target="_blank"><img src="https://ipfs.io/ipfs/bafybeicks42jnz3dctcijwg7aan2dlgmm7pije6j2daywn5ze37pnp6ini/insta.png" class="icon" /></a>
-          <a href="https://www.tiktok.com/@meta.mob6" id="tiktok" target="_blank"><img src="https://ipfs.io/ipfs/bafybeicks42jnz3dctcijwg7aan2dlgmm7pije6j2daywn5ze37pnp6ini/tiktok.png" class="icon" /></a>
+        <div id="socials" class="social" aria-label="Social links">
+          <a href="https://t.me/metamob3" id="tme" target="_blank" rel="noopener noreferrer"><img src="https://ipfs.io/ipfs/bafybeicks42jnz3dctcijwg7aan2dlgmm7pije6j2daywn5ze37pnp6ini/tme.webp" class="icon" alt="Telegram" loading="lazy" /></a>
+          <a href="https://x.com/tokens617" id="xcom" target="_blank" rel="noopener noreferrer"><img src="https://ipfs.io/ipfs/bafybeicks42jnz3dctcijwg7aan2dlgmm7pije6j2daywn5ze37pnp6ini/xcom.webp" class="icon" alt="X.com" loading="lazy" /></a>
+          <a href="https://www.instagram.com/meta_mob_" id="insta" target="_blank" rel="noopener noreferrer"><img src="https://ipfs.io/ipfs/bafybeicks42jnz3dctcijwg7aan2dlgmm7pije6j2daywn5ze37pnp6ini/insta.png" class="icon" alt="Instagram" loading="lazy" /></a>
+          <a href="https://www.tiktok.com/@meta.mob6" id="tiktok" target="_blank" rel="noopener noreferrer"><img src="https://ipfs.io/ipfs/bafybeicks42jnz3dctcijwg7aan2dlgmm7pije6j2daywn5ze37pnp6ini/tiktok.png" class="icon" alt="TikTok" loading="lazy" /></a>
         </div>
         <div class="footer-links" aria-label="Legal links">
           <button class="footer-link" id="privacyLink" type="button">PRIVACY</button>
@@ -4849,9 +4859,10 @@
                             <div class="value">SMART</div>
                         </div>
                     </div>
+
                     <div class="wallet-list">
                         <li>
-                            <span>COLOR THEME</span>
+                            <span>COLOR PREFERENCE</span>
                             <span>
                                 <select id="settingsThemeSelect" class="wallet-prefix-select">
                                     <option value="0">Dark Void</option>
@@ -4873,38 +4884,99 @@
                                 </select>
                             </span>
                         </li>
-                        <li><span>AUTO-CONNECT</span><span><input type="checkbox" checked></span></li>
-                        <li><span>NOTIFICATIONS</span><span><select><option>All</option><option>Critical Only</option><option>None</option></select></span></li>
+                        <li>
+                            <span>AUTO-CONNECT</span>
+                            <span><input id="settingsAutoConnect" type="checkbox" checked></span>
+                        </li>
+                        <li>
+                            <span>NOTIFICATIONS</span>
+                            <span>
+                                <select id="settingsNotifications" class="wallet-prefix-select">
+                                    <option value="all">All</option>
+                                    <option value="critical">Critical Only</option>
+                                    <option value="none">None</option>
+                                </select>
+                            </span>
+                        </li>
                         <li><span>DEFAULT WALLET</span><span>MetaMask</span></li>
                     </div>
+
                     <div class="wallet-actions">
-                        <button class="btn">SAVE PREFS</button>
-                        <button class="btn">RESET</button>
+                        <button class="btn" type="button" id="settingsSaveBtn">SAVE PREFS</button>
+                        <button class="btn" type="button" id="settingsResetBtn">RESET</button>
                     </div>
                 `;
           openWalletModal('WALLET SETTINGS', html);
 
-          // wire up theme + chain selectors after inject
+          // wire up controls after inject
           setTimeout(() => {
             const themeSelect = document.getElementById('settingsThemeSelect');
+            const chainSelect = document.getElementById('settingsChainSelect');
+            const autoConnectEl = document.getElementById('settingsAutoConnect');
+            const notifEl = document.getElementById('settingsNotifications');
+            const saveBtn = document.getElementById('settingsSaveBtn');
+            const resetBtn = document.getElementById('settingsResetBtn');
+
+            // Restore from storage (fallback to current UI state)
+            const savedTheme = localStorage.getItem('metamob_pref_theme');
+            const savedChain = localStorage.getItem('metamob_pref_chain');
+            const savedAuto = localStorage.getItem('metamob_pref_autoconnect');
+            const savedNotif = localStorage.getItem('metamob_pref_notifications');
+
+            if (themeSelect) themeSelect.value = savedTheme !== null ? String(savedTheme) : String(currentPalette);
+            if (chainSelect) chainSelect.value = savedChain || network;
+            if (autoConnectEl) autoConnectEl.checked = savedAuto !== null ? savedAuto === 'true' : true;
+            if (notifEl) notifEl.value = savedNotif || 'all';
+
+            // Live preview only (no persistence until SAVE PREFS)
             if (themeSelect) {
-              themeSelect.value = String(currentPalette);
               themeSelect.addEventListener('change', (e) => {
                 const val = e.target.value;
-                if (typeof syncSliders === 'function') {
-                  syncSliders(val);
-                }
+                if (typeof syncSliders === 'function') syncSliders(val);
               });
             }
 
-            const chainSelect = document.getElementById('settingsChainSelect');
             if (chainSelect) {
-              chainSelect.value = network;
               chainSelect.addEventListener('change', async (e) => {
                 const newNet = e.target.value;
-                if (typeof switchNetwork === 'function') {
-                  await switchNetwork(newNet);
-                }
+                if (typeof switchNetwork === 'function') await switchNetwork(newNet);
+                // update visible labels immediately
+                document.getElementById('currentNetwork').textContent = newNet;
+                document.getElementById('mobileCurrentNetwork').textContent = newNet;
+              });
+            }
+
+            if (saveBtn) {
+              saveBtn.addEventListener('click', () => {
+                // Persist settings
+                if (themeSelect) localStorage.setItem('metamob_pref_theme', String(themeSelect.value));
+                if (chainSelect) localStorage.setItem('metamob_pref_chain', String(chainSelect.value));
+                if (autoConnectEl) localStorage.setItem('metamob_pref_autoconnect', String(autoConnectEl.checked));
+                if (notifEl) localStorage.setItem('metamob_pref_notifications', String(notifEl.value));
+
+                showToast('PREFERENCES SECURED');
+                closeWalletModal();
+              });
+            }
+
+            if (resetBtn) {
+              resetBtn.addEventListener('click', async () => {
+                localStorage.removeItem('metamob_pref_theme');
+                localStorage.removeItem('metamob_pref_chain');
+                localStorage.removeItem('metamob_pref_autoconnect');
+                localStorage.removeItem('metamob_pref_notifications');
+
+                if (themeSelect) themeSelect.value = '0';
+                if (notifEl) notifEl.value = 'all';
+                if (autoConnectEl) autoConnectEl.checked = true;
+                if (chainSelect) chainSelect.value = 'Base';
+
+                if (typeof syncSliders === 'function') syncSliders('0');
+                if (typeof switchNetwork === 'function') await switchNetwork('Base');
+                document.getElementById('currentNetwork').textContent = 'Base';
+                document.getElementById('mobileCurrentNetwork').textContent = 'Base';
+
+                showToast('RESET COMPLETE');
               });
             }
           }, 0);
@@ -5188,8 +5260,40 @@
       ensureShopCardsInteractive();
       wireProductOverlays();
 
+      // ============================================
+      // SETTINGS: RESTORE ON LOAD (PERSIST LIKE ACCOUNT)
+      // ============================================
+      function restoreSettingsOnLoad() {
+        const savedTheme = localStorage.getItem('metamob_pref_theme');
+        const savedChain = localStorage.getItem('metamob_pref_chain');
+        const savedAuto = localStorage.getItem('metamob_pref_autoconnect');
+
+        // Theme
+        if (savedTheme !== null) {
+          console.log('[SETTINGS] Restoring theme:', savedTheme);
+          syncSliders(savedTheme);
+        } else {
+          syncSliders('0');
+        }
+
+        // Chain label + optional switch
+        if (savedChain) {
+          console.log('[SETTINGS] Restoring chain preference:', savedChain);
+          const cur = document.getElementById('currentNetwork');
+          const mobCur = document.getElementById('mobileCurrentNetwork');
+          if (cur) cur.textContent = savedChain;
+          if (mobCur) mobCur.textContent = savedChain;
+
+          // If autoconnect is disabled, don't force switch at load
+          const shouldSwitch = savedAuto === null ? true : savedAuto === 'true';
+          if (shouldSwitch && typeof switchNetwork === 'function') {
+            switchNetwork(savedChain);
+          }
+        }
+      }
+
       // Initialize
-      applyPalette(0);
+      restoreSettingsOnLoad();
       // Ensure shop cards are interactive after initial paint
       ensureShopCardsInteractive();
     </script>
