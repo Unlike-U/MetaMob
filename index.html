@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>METAMOB - Cyberpunk dApp</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gridjs@latest/dist/gridjs.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/gridjs@latest/dist/gridjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -1050,6 +1052,16 @@
         opacity: 1;
         transform: translateY(-1px);
         text-shadow: 0 0 24px currentColor;
+      }
+
+      .social {
+        display: flex;
+        justify-content: center;
+      }
+      .icon {
+        display: inline-block;
+        height: 24px;
+        width: 24px;
       }
 
       @media (max-width: 768px) {
@@ -2241,6 +2253,12 @@
     <footer class="site-footer" id="siteFooter" role="contentinfo">
       <div class="site-footer-inner">
         <div class="footer-copy" id="footerCopy">© <span id="footerYear"></span> METAMOB. ALL RIGHTS RESERVED.</div>
+        <div id="socials">
+          <a href="https://t.me/metamob3" id="tme" target="_blank"><img src="https://ipfs.io/ipfs/bafybeicks42jnz3dctcijwg7aan2dlgmm7pije6j2daywn5ze37pnp6ini/tme.webp" class="icon" /></a>
+          <a href="https://x.com/tokens617" id="xcom" target="_blank"><img src="https://ipfs.io/ipfs/bafybeicks42jnz3dctcijwg7aan2dlgmm7pije6j2daywn5ze37pnp6ini/xcom.webp" class="icon" /></a>
+          <a href="https://www.instagram.com/meta_mob_" id="insta" target="_blank"><img src="https://ipfs.io/ipfs/bafybeicks42jnz3dctcijwg7aan2dlgmm7pije6j2daywn5ze37pnp6ini/insta.png" class="icon" /></a>
+          <a href="https://www.tiktok.com/@meta.mob6" id="tiktok" target="_blank"><img src="https://ipfs.io/ipfs/bafybeicks42jnz3dctcijwg7aan2dlgmm7pije6j2daywn5ze37pnp6ini/tiktok.png" class="icon" /></a>
+        </div>
         <div class="footer-links" aria-label="Legal links">
           <button class="footer-link" id="privacyLink" type="button">PRIVACY</button>
           <button class="footer-link" id="termsLink" type="button">TERMS OF SERVICE</button>
